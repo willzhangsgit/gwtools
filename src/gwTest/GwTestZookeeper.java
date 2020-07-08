@@ -17,7 +17,7 @@ import org.apache.zookeeper.data.Stat;
 
 import org.junit.Test;
 
-public class GwTest2 implements Watcher {
+public class GwTestZookeeper implements Watcher {
 
     private static CountDownLatch connectedSemaphore = new CountDownLatch(1);
     private static ZooKeeper zk = null;
@@ -29,7 +29,7 @@ public class GwTest2 implements Watcher {
 		try {
 			String path = "/willdata";
 			zk = new ZooKeeper("127.0.0.1:2181", 5000, //
-					new GwTest2());
+					new GwTestZookeeper());
 			//等待zk连接成功的通知
 	        try {
 				connectedSemaphore.await();
